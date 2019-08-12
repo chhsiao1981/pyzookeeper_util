@@ -22,7 +22,7 @@ def init(ini_filename, log_ini_filename='', params=None):
 
 def _init_logger(log_ini_filename, ini_filename):
     global logger
-    logger = logging.getLogger(_LOGGER_NAME)
+    logger = logging.getLogger(_NAME)
 
     if not log_ini_filename:
         log_ini_filename = ini_filename
