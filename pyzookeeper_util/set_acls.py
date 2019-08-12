@@ -11,6 +11,7 @@ def set_acls(path, acls, zkCli, server, config=None, auth=None):
 
     auth_str = util.auth_to_auth_str(auth)
 
+    cfg.logger.debug('set_acls: to exec: cmd: %s auth_str: %s', cmd, auth_str)
     stdout_list, stderr_list = util.exec(cmd, zkCli, server, config, auth_str)
 
     return None if not stderr_list else stderr_list
