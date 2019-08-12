@@ -38,7 +38,7 @@ def exec(cmd, zkCli, server, config=None, auth=None):
 
 def auth_to_auth_str(auth):
     auth_list = auth.split(':')
-    return ' '.join([auth_list[0], ':'.join(auth_list[1:])])
+    return ' '.join(['addauth', auth_list[0], ':'.join(auth_list[1:])])
 
 
 def filter_valid_list(the_list, valid_starts):
