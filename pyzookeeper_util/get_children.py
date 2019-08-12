@@ -11,7 +11,7 @@ def get_children(path, zkCli, server, config=None, auth=None):
 
     auth_str = util.auth_to_auth_str(auth)
 
-    stdout_list, stderr_list = util.exec(cmd, zkCli, server, config, auth)
+    stdout_list, stderr_list = util.exec(cmd, zkCli, server, config, auth_atr)
 
     children = util.filter_valid_list(stdout_list, ['/'])
 
@@ -33,7 +33,7 @@ def parse_args():
 def _main():
     error, args = parse_args()
     cfg.init(args.ini, args.log_filename)
-    zkCli = cfg.config.get('zkCli', None)
+    zkCli = cfg.config.get('zkcli', None)
     server = cfg.config.get('server', None)
     config = cfg.config.get('config', None)
     auth = cfg.config.get('auth', None)

@@ -11,7 +11,7 @@ def set_acls(path, acls, zkCli, server, config=None, auth=None):
 
     auth_str = util.auth_to_auth_str(auth)
 
-    stdout_list, stderr_list = util.exec(cmd, zkCli, server, config, auth)
+    stdout_list, stderr_list = util.exec(cmd, zkCli, server, config, auth_str)
 
     return None if not stderr_list else stderr_list
 
