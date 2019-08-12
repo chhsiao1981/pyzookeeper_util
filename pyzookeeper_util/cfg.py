@@ -15,6 +15,9 @@ _NAME = "zookeeper_util"
 
 
 def init(ini_filename, log_ini_filename='', params=None):
+    if params is None:
+        params = {}
+
     _init_logger(log_ini_filename, ini_filename)
     _init_ini_file(ini_filename)
     _post_init_config(params)
