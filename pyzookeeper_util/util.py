@@ -24,8 +24,6 @@ def exec(cmd, zkCli, server, config=None, auth=None):
     if config is not None:
         pcmd += ['--config', config]
 
-    cfg.logger.debug('to Popen: pcmd: %s cmds_str: %s', pcmd, cmds_str)
-
     process = Popen(pcmd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate(cmd_io.read().encode('utf-8'))
     stdout = stdout.decode('utf-8')
