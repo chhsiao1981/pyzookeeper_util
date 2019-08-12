@@ -5,6 +5,7 @@ import argparse
 from . import cfg
 from . import util
 from .get_children import get_children
+from .get_acls import get_acls
 
 
 def recursive_get_acls(path, zkCli, server, config=None, auth=None):
