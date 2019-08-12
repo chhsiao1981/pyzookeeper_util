@@ -11,7 +11,7 @@ def get_children(path, zkCli, server, config=None, auth=None):
 
     auth_str = util.auth_to_auth_str(auth)
 
-    stdout_list, stderr_list = util.exec(cmd, zkCli, server, config, auth_atr)
+    stdout_list, stderr_list = util.exec(cmd, zkCli, server, config, auth_str)
 
     children = util.filter_valid_list(stdout_list, ['/'])
 
