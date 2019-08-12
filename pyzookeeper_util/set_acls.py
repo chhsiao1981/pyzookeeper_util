@@ -36,7 +36,7 @@ def _main():
     path = args.path
     acls = args.acls.split(',')
 
-    zkCli = cfg.config.get('zkCli', None)
+    zkCli = cfg.config.get('zkcli', None)
     server = cfg.config.get('server', None)
     config = cfg.config.get('config', None)
     auth = cfg.config.get('auth', None)
