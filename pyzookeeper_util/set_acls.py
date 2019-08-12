@@ -32,14 +32,16 @@ def parse_args():
 def _main():
     error, args = parse_args()
     cfg.init(args.ini, args.log_filename)
+
+    path = args.path
+    acls = args.acls.split(',')
+
     zkCli = cfg.config.get('zkCli', None)
     server = cfg.config.get('server', None)
     config = cfg.config.get('config', None)
     auth = cfg.config.get('auth', None)
 
-    acls = args.acls.split(',')
-
-    ret = set_acls(args.path, zkCli, server, config, auth)
+    ret = set_acls(path, zkCli, server, config, auth)
 
     cfg.logger.info('after set_acls: path: %s acls: %s ret: %s', path, acls, ret)
 

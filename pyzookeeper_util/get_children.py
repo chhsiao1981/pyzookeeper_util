@@ -33,12 +33,15 @@ def parse_args():
 def _main():
     error, args = parse_args()
     cfg.init(args.ini, args.log_filename)
+
+    path = args.path
+
     zkCli = cfg.config.get('zkcli', None)
     server = cfg.config.get('server', None)
     config = cfg.config.get('config', None)
     auth = cfg.config.get('auth', None)
 
-    children = get_children(args.path, zkCli, server, config, auth)
+    children = get_children(path, zkCli, server, config, auth)
 
     cfg.logger.info('after get_children: path: %s children: %s', path, children)
 
