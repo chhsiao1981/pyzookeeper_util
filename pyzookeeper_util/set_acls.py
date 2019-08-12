@@ -41,7 +41,7 @@ def _main():
     config = cfg.config.get('config', None)
     auth = cfg.config.get('auth', None)
 
-    ret = set_acls(path, zkCli, server, config, auth)
+    ret = set_acls(path, acls, zkCli, server, config, auth)
 
     cfg.logger.info('after set_acls: path: %s acls: %s ret: %s', path, acls, ret)
 
