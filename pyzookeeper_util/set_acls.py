@@ -4,6 +4,7 @@ import argparse
 
 from . import cfg
 from . import util
+from .get_acls import get_acls
 
 
 def set_acls(path, acls, zkCli, server, config=None, auth=None):
@@ -42,9 +43,11 @@ def _main():
     config = cfg.config.get('config', None)
     auth = cfg.config.get('auth', None)
 
+    orig_acls = get_acls(path, zkCli, server, config, auth)
     ret = set_acls(path, acls, zkCli, server, config, auth)
+    new_acls = get_acls(path, zkCli, server, config, auth)
 
-    cfg.logger.info('after set_acls: path: %s acls: %s ret: %s', path, acls, ret)
+    cfg.logger.info('after set_acls: path: %s acls: %s ret: %s orig_acls: %s new_acls: %s', path, acls, ret, orig_acls, new_acls)
 
 
 if __name__ == '__main__':
