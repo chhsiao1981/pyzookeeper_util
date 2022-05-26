@@ -28,7 +28,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "ujson==1.35",
+        "ujson==5.2.0",
     ],
     dependency_links=[
     ],
