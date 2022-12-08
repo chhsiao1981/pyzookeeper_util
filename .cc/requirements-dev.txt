@@ -1,6 +1,6 @@
 arrow==0.13.1
 binaryornot==0.4.4
-certifi==2019.3.9
+certifi==2022.12.7
 chardet==3.0.4
 Click==7.0
 -e git+https://github.com/chhsiao1981/cookiecutter.git@develop#egg=cookiecutter
